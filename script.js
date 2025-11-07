@@ -25,7 +25,7 @@ map.on('load', function() {
         }
     });
   
-  document.getElementById('togglePoints').addEventListener('click', () => {
+  document.getElementById('determinelandmarkvisibility').addEventListener('click', () => {
     const visibility = map.getLayoutProperty('points-layer', 'visibility');
     if (visibility === 'visible' || visibility === undefined) {
         map.setLayoutProperty('points-layer', 'visibility', 'none');
