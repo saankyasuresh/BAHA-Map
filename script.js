@@ -13,29 +13,20 @@ map.on('load', function() {
         data: geojsonURL,
     });
   
-  map.on('load', () => {
-        map.loadImage(
-            'https://as2.ftcdn.net/jpg/01/86/38/71/1000_F_186387124_K8VxzBavTzVIhjLOJJjEeWbLuGZm52XG.jpg',
-            (error, image) => {
-                if (error) throw error;
-
-              
-                map.addImage('house', image);
-
-     
-    map.addLayer({
-                    'id': 'points-houses',
-                    'type': 'symbol',
-                    'source': 'points-data', // reference the data source
-                    'layout': {
-                        'icon-image': 'house', // reference the image
-                        'icon-size': 0.25
-          ]
+ map.addLayer({
+        id: 'points-layer',
+        type: 'circle',
+        source: 'points-data',
+        paint: {
+            'circle-color': '#9266ad',
+            'circle-radius': 6,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#614c6e'
         }
-      });
+    });
 
     // Add click event for popups
-    map.on('click', 'points-houses', (e) => {
+    map.on('click', 'points-layer', (e) => {
           const coordinates = e.features[0].geometry.coordinates.slice();
           const properties = e.features[0].properties;
           
@@ -57,12 +48,12 @@ map.on('load', function() {
     });
 
      // Change cursor to pointer when hovering over points
-    map.on('mouseenter', 'points-houses', () => {
+    map.on('mouseenter', 'points-layer', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
 
     // Change cursor back when leaving points
-    map.on('mouseleave', 'points-houses', () => {
+    map.on('mouseleave', 'points-layer', () => {
         map.getCanvas().style.cursor = '';
     });
 
