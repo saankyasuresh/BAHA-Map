@@ -12,21 +12,32 @@ map.on('load', function() {
         type: 'geojson',
         data: geojsonURL,
     });
-
-     map.addLayer({
-        id: 'points-layer',
-        type: 'circle',
-        source: 'points-data',
-        paint: {
-            'circle-color': '#9266ad',
-            'circle-radius': 6,
-            'circle-stroke-width': 2,
-            'circle-stroke-color': '#614c6e'
+  
+  map.loadImage(
+  'https://raw.githubusercontent.com/saankyasuresh/BAHA-Map/main/Web%20Map%20Icon.png',
+    
+    if (!map.hasImage('house-icon')) {
+      map.addImage('house-icon', image);
+    }
+     
+    map.addLayer({
+      id: 'points-houses',
+      type: 'symbol',
+      source: 'points-data',          
+      layout: {
+        'icon-image': 'house-icon',
+        'icon-allow-overlap': true,
+        'icon-anchor': 'bottom',
+        'icon-size': [
+          'interpolate', ['linear'], ['zoom'],
+          11, 0.05, 
+          14, 0.09,   
+          16, 0.13
         }
     });
 
     // Add click event for popups
-    map.on('click', 'points-layer', (e) => {
+    map.on('click', 'points-houses', (e) => {
           const coordinates = e.features[0].geometry.coordinates.slice();
           const properties = e.features[0].properties;
           
@@ -48,12 +59,12 @@ map.on('load', function() {
     });
 
      // Change cursor to pointer when hovering over points
-    map.on('mouseenter', 'points-layer', () => {
+    map.on('mouseenter', 'points-houses', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
 
     // Change cursor back when leaving points
-    map.on('mouseleave', 'points-layer', () => {
+    map.on('mouseleave', 'points-houses', () => {
         map.getCanvas().style.cursor = '';
     });
 
