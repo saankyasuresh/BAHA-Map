@@ -13,13 +13,13 @@ map.on('load', function() {
         data: geojsonURL,
     });
 
-  map.loadImage('https://github.com/saankyasuresh/BAHA-Map/blob/e5954e87ad51ea0ea97fb5b5d59005006eeb59e4/Web%20Map%20Icon.png')
+  map.loadImage('https://raw.githubusercontent.com/saankyasuresh/BAHA-Map/main/Web%20Map%20Icon.png')
   
     map.addLayer({
         id: 'points-layer',
         type: 'symbol',
         source: 'points-data',
-        paint: (
+        layout: (
             'symbol-image': 'house',
             'symbol-size': 0.9,
             'symbol-overlap': true
