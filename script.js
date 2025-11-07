@@ -13,7 +13,7 @@ map.on('load', function() {
         data: geojsonURL,
     });
 
-   const iconSrc = 'Web Map Icon.png';
+   const iconSrc = './Web%20Map%20Icon.png';
   
     map.addLayer({
         id: 'points-layer',
