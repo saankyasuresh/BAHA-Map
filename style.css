@@ -14,8 +14,8 @@ body {
   right:16px;
   z-index:1000;
   padding:8px 12px;
-  background:#fff;
-  border:1px solid #ccc;
-  border-radius:6px;
+  background:#d9c982;
+  border:2px solid #ede1ab;
+  border-radius:7px;
   cursor:pointer;
 }
