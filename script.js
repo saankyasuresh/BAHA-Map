@@ -34,7 +34,7 @@ map.on('load', function() {
             <div>
                 <h3>${properties.Landmark}</h3>
                 <p><strong>Address:</strong> ${properties.Address}</p>
-                <p><strong>Architect + Date:</strong> ${p['Architect + Date'] ?? p['Architect_+_Date'] ?? ''}</p>
+                <p><strong>Architect + Date:</strong> ${properties['Architect + Date'] ?? properties['Architect_+_Date'] ?? ''}</p>
                 <p><strong>Designated:</strong> ${properties.Designated}</p>
                 ${properties.Link ? `<p><a href="${properties.Link}" target="_blank">More Information</a></p>` : ''}
                 ${properties.Note ? `<p><strong>Notes:</strong> ${properties.Note}</p>` : ''}
