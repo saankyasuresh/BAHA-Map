@@ -15,13 +15,13 @@ map.on('load', function() {
 
     map.addLayer({
         id: 'points-layer',
-        type: 'circle',
+        type: 'star',
         source: 'points-data',
         paint: {
-            'circle-color': '#4264FB',
-            'circle-radius': 6,
-            'circle-stroke-width': 2,
-            'circle-stroke-color': '#ffffff'
+            'star-color': '#412154',
+            'star-radius': 6,
+            'star-stroke-width': 2,
+            'star-stroke-color': '#614c6e'
         }
     });
 
