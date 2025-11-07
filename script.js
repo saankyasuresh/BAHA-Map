@@ -13,28 +13,31 @@ map.on('load', function() {
         data: geojsonURL,
     });
   
-  map.loadImage(
-  'https://raw.githubusercontent.com/saankyasuresh/BAHA-Map/main/Web%20Map%20Icon.png',
-    
-    if (!map.hasImage('house-icon')) {
-      map.addImage('house-icon', image);
-    }
+ map.loadImage(
+    'https://raw.githubusercontent.com/saankyasuresh/BAHA-Map/main/Web%20Map%20Icon.png',
+    (err, image) => {
+      if (err) { console.error('loadImage error:', err); return; }
+
+      if (!map.hasImage('house-icon')) {
+        map.addImage('house-icon', image);
+      }
      
     map.addLayer({
-      id: 'points-houses',
-      type: 'symbol',
-      source: 'points-data',          
-      layout: {
-        'icon-image': 'house-icon',
-        'icon-allow-overlap': true,
-        'icon-anchor': 'bottom',
-        'icon-size': [
-          'interpolate', ['linear'], ['zoom'],
-          11, 0.05, 
-          14, 0.09,   
-          16, 0.13
+        id: 'points-houses',
+        type: 'symbol',
+        source: 'points-data',
+        layout: {
+          'icon-image': 'house-icon',
+          'icon-allow-overlap': true,
+          'icon-anchor': 'bottom',
+          'icon-size': [
+            'interpolate', ['linear'], ['zoom'],
+            11, 0.05,
+            14, 0.09,
+            16, 0.13
+          ]
         }
-    });
+      });
 
     // Add click event for popups
     map.on('click', 'points-houses', (e) => {
