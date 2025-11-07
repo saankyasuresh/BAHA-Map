@@ -13,7 +13,7 @@ map.on('load', function() {
         data: geojsonURL,
     });
 
-  map.loadImage('https://raw.githubusercontent.com/saankyasuresh/BAHA-Map/main/Web%20Map%20Icon.png')
+   const iconSrc = 'Web Map Icon.png';
   
     map.addLayer({
         id: 'points-layer',
