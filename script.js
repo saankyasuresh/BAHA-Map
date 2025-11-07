@@ -13,15 +13,17 @@ map.on('load', function() {
         data: geojsonURL,
     });
 
+  map.loadImage('https://github.com/saankyasuresh/BAHA-Map/blob/e5954e87ad51ea0ea97fb5b5d59005006eeb59e4/Web%20Map%20Icon.png')
+  
     map.addLayer({
         id: 'points-layer',
-        type: 'circle',
+        type: 'symbol',
         source: 'points-data',
-        paint: {
-            'circle-color': '#9266ad',
-            'circle-radius': 6,
-            'circle-stroke-width': 2,
-            'circle-stroke-color': '#614c6e'
+        paint: (
+            'symbol-image': 'house',
+            'symbol-size': 0.9,
+            'symbol-overlap': true
+            'symbol-anchor': 'bottom'
         }
     });
 
