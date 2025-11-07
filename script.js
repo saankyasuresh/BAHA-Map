@@ -24,6 +24,15 @@ map.on('load', function() {
             'circle-stroke-color': '#614c6e'
         }
     });
+  
+  document.getElementById('togglePoints').addEventListener('click', () => {
+    const visibility = map.getLayoutProperty('points-layer', 'visibility');
+    if (visibility === 'visible' || visibility === undefined) {
+        map.setLayoutProperty('points-layer', 'visibility', 'none');
+    } else {
+        map.setLayoutProperty('points-layer', 'visibility', 'visible');
+    }
+});
 
     // Add click event for popups
     map.on('click', 'points-layer', (e) => {
