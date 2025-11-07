@@ -7,3 +7,15 @@ body {
   top: 0;
   bottom: 0;
   width: 100%; }
+
+#togglePoints{
+  position:absolute;
+  top:16px;
+  right:16px;
+  z-index:1000;
+  padding:8px 12px;
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:6px;
+  cursor:pointer;
+}
