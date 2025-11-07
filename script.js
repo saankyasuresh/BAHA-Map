@@ -18,7 +18,7 @@ map.on('load', function() {
         type: 'circle',
         source: 'points-data',
         paint: {
-            'circle-color': '#412154',
+            'circle-color': '#9266ad',
             'circle-radius': 6,
             'circle-stroke-width': 2,
             'circle-stroke-color': '#614c6e'
