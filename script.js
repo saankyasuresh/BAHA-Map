@@ -13,17 +13,15 @@ map.on('load', function() {
         data: geojsonURL,
     });
 
-   const iconSrc = './Web%20Map%20Icon.png';
-  
-    map.addLayer({
+     map.addLayer({
         id: 'points-layer',
-        type: 'symbol',
+        type: 'circle',
         source: 'points-data',
-        layout: (
-            'symbol-image': 'house',
-            'symbol-size': 0.9,
-            'symbol-overlap': true
-            'symbol-anchor': 'bottom'
+        paint: {
+            'circle-color': '#9266ad',
+            'circle-radius': 6,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#614c6e'
         }
     });
 
